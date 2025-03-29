@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 int isLoShu(int square[3][3]) {
     int i, j;
     int alreadyUsed[10] = {0}; 
