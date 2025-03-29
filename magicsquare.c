@@ -54,3 +54,29 @@ int isLoShu(int square[3][3]) {
 
     return 1;
 }
+
+void printSquare(int square[3][3]) {
+    int i, j;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%d ", square[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void fillRandomSquare(int square[3][3]) {
+    int used[10] = {0}; // Track numbers 1..9
+    int i, j;
+
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            int r;
+            do {
+                r = rand() % 9 + 1; // Random number between 1 and 9
+            } while (used[r] == 1); // If already used, pick again
+            used[r] = 1;
+            square[i][j] = r;
+        }
+    }
+}
